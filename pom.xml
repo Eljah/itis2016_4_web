@@ -47,7 +47,7 @@
                     <server>tomcat-development-server</server>
                     <port>9966</port>
                     <uriEncoding>UTF-8</uriEncoding>
-                   <!--<httpsPort>8443</httpsPort>-->
+                    <!--<httpsPort>8443</httpsPort>-->
                     <connectorHttpProtocol>HTTP/1.1</connectorHttpProtocol>
                     <extraResources>
                         <extraResource>
@@ -88,25 +88,42 @@
 
                 </dependencies>
             </plugin>
-        <!--<plugin>
-            <groupId>org.mortbay.jetty</groupId>
-            <artifactId>jetty-maven-plugin</artifactId>
-            <version>8.1.14.v20131031</version>
-            <configuration>
-                <connectors>
-                    <connector implementation="org.eclipse.jetty.server.nio.SelectChannelConnector">
-                        <maxIdleTime>3600000</maxIdleTime>
-                        <port>8888</port>
-                    </connector>
-                </connectors>
-                <webApp>
-                    <contextPath>/</contextPath>
-                </webApp>
-            </configuration>
-        </plugin>-->
-                    </plugins>
+            <!--<plugin>
+                <groupId>org.mortbay.jetty</groupId>
+                <artifactId>jetty-maven-plugin</artifactId>
+                <version>8.1.14.v20131031</version>
+                <configuration>
+                    <connectors>
+                        <connector implementation="org.eclipse.jetty.server.nio.SelectChannelConnector">
+                            <maxIdleTime>3600000</maxIdleTime>
+                            <port>8888</port>
+                        </connector>
+                    </connectors>
+                    <webApp>
+                        <contextPath>/</contextPath>
+                    </webApp>
+                </configuration>
+            </plugin>-->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>2.3.2</version>
+                <configuration>
+                    <encoding>${project.build.sourceEncoding}</encoding>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-resources-plugin</artifactId>
+                <version>2.4.3</version>
+                <configuration>
+                    <encoding>${project.build.sourceEncoding}</encoding>
+                </configuration>
+            </plugin>
+        </plugins>
         <finalName>itis2016</finalName>
     </build>
-
-
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
 </project>
